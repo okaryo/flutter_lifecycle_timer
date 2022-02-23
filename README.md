@@ -1,3 +1,5 @@
+[![Test and Lint](https://github.com/okaryo/flutter_lifecycle_timer/actions/workflows/test-and-list.yml/badge.svg)](https://github.com/okaryo/flutter_lifecycle_timer/actions/workflows/test-and-list.yml)
+
 # flutter_lifecycle_timer
 
 A new Flutter package project.
