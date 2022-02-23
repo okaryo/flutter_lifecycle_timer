@@ -3,9 +3,6 @@ import 'package:flutter_lifecycle_timer/src/stopwatch/flutter_lifecycle_stopwatc
 
 class FlutterLifecycleStopwatchDelegate with WidgetsBindingObserver implements FlutterLifecycleStopwatch {
   @override
-  late final FlutterLifecycleStopwatchDelegate _delegate;
-
-  @override
   int hour() => 1;
 
   @override

@@ -3,7 +3,9 @@ import 'package:flutter_lifecycle_timer/src/stopwatch/flutter_lifecycle_stopwatc
 class FlutterLifecycleStopwatch {
   late final FlutterLifecycleStopwatchDelegate _delegate;
 
-  FlutterLifecycleStopwatch();
+  FlutterLifecycleStopwatch() {
+    _delegate = FlutterLifecycleStopwatchDelegate();
+  }
 
   int hour() => _delegate.hour();
 
