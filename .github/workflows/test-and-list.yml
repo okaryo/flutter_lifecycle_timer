@@ -1,0 +1,24 @@
+name: Test and Lint
+
+on:
+  push:
+
+env:
+  FLUTTER_VERSION: "2.10.2"
+
+jobs:
+  test-and-lint:
+    name: Run test and lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Flutter
+        uses: britannio/action-install-flutter@v1
+        with:
+          version: $FLUTTER_VERSION
+      - name: Run pub get
+        run: flutter pub get
+      - name: Run test
+        run: flutter test test/*_test.dart
+      - name: Run analyze
+        run: flutter analyze
