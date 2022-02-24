@@ -1,17 +1,20 @@
+import 'dart:async';
+
 import 'package:flutter_lifecycle_timer/src/stopwatch/flutter_lifecycle_stopwatch_delegate.dart';
 
 class FlutterLifecycleStopwatch {
   late final FlutterLifecycleStopwatchDelegate _delegate;
 
   FlutterLifecycleStopwatch() {
-    _delegate = FlutterLifecycleStopwatchDelegate();
+    final timer = Timer(Duration.zero, () {});
+    _delegate = FlutterLifecycleStopwatchDelegate(timer);
   }
 
-  int hour() => _delegate.hour();
+  int hours() => _delegate.hours();
 
-  int minutes() => 40;
+  int minutes() => _delegate.minutes();
 
-  int seconds() => 40;
+  int seconds() => _delegate.seconds();
 
   void start() {}
 

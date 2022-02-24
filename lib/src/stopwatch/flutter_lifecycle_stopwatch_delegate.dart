@@ -1,21 +1,23 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
+import 'package:flutter_lifecycle_timer/src/stopwatch/elapsed_time.dart';
 import 'package:flutter_lifecycle_timer/src/stopwatch/flutter_lifecycle_stopwatch.dart';
 
 class FlutterLifecycleStopwatchDelegate with WidgetsBindingObserver implements FlutterLifecycleStopwatch {
-  @override
-  int hour() => 1;
+  final ElapsedTime _elapsedTime;
+  Timer _timer;
+
+  FlutterLifecycleStopwatchDelegate(this._timer) : _elapsedTime = ElapsedTime.init();
 
   @override
-  int minutes() {
-    // TODO: implement minutes
-    throw UnimplementedError();
-  }
+  int hours() => _elapsedTime.hours;
 
   @override
-  int seconds() {
-    // TODO: implement seconds
-    throw UnimplementedError();
-  }
+  int minutes() => _elapsedTime.minutes;
+
+  @override
+  int seconds() => _elapsedTime.seconds;
 
   @override
   void start() {
