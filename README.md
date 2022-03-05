@@ -1,4 +1,4 @@
-[![Test and Lint](https://github.com/okaryo/flutter_lifecycle_timer/actions/workflows/test-and-list.yml/badge.svg)](https://github.com/okaryo/flutter_lifecycle_timer/actions/workflows/test-and-list.yml)
+[![Test and Lint](https://github.com/okaryo/flutter_lifecycle_timer/actions/workflows/test-and-lint.yml/badge.svg)](https://github.com/okaryo/flutter_lifecycle_timer/actions/workflows/test-and-lint.yml)
 
 # flutter_lifecycle_timer
 
