@@ -1,25 +1,26 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+class ElapsedTime {
+  final Duration _elapsedSeconds;
 
-part 'elapsed_time.freezed.dart';
-
-@freezed
-class ElapsedTime with _$ElapsedTime {
-  const factory ElapsedTime(Duration elapsedSeconds) = _ElapsedTime;
-
-  const ElapsedTime._();
+  const ElapsedTime(this._elapsedSeconds);
 
   factory ElapsedTime.init() {
-    return ElapsedTime(Duration(seconds: 0));
+    return const ElapsedTime(Duration(seconds: 0));
   }
 
-  int get hours => elapsedSeconds.inSeconds ~/ (60 * 60);
+  int get hours => _elapsedSeconds.inSeconds ~/ (60 * 60);
 
-  int get minutes => elapsedSeconds.inSeconds ~/ 60;
+  int get minutes => _elapsedSeconds.inSeconds ~/ 60;
 
-  int get seconds => elapsedSeconds.inSeconds % 60;
+  int get seconds => _elapsedSeconds.inSeconds % 60;
 
   ElapsedTime advance() {
-    final newDuration = Duration(seconds: elapsedSeconds.inSeconds + 1);
+    final newDuration = Duration(seconds: _elapsedSeconds.inSeconds + 1);
     return ElapsedTime(newDuration);
   }
+
+  @override
+  bool operator ==(other) => other is ElapsedTime && other._elapsedSeconds == this._elapsedSeconds;
+
+  @override
+  int get hashCode => super.hashCode;
 }
