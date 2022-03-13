@@ -36,4 +36,14 @@ void main() {
       expect(actual, expected);
     });
   });
+
+  // group('#start', () {
+  //   test('should start stopwatch', () {
+  //     final FlutterLifecycleStopwatch stopwatch = FlutterLifecycleStopwatchDelegate(timer);
+  //
+  //     stopwatch.start();
+  //     final expected = 0;
+  //     expect(actual, expected);
+  //   });
+  // });
 }
